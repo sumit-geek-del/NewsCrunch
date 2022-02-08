@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   mode :boolean = true;
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   changeColor(){
     const switch1 =<HTMLElement> document.getElementById('flexSwitchCheckDefault');
@@ -22,6 +23,7 @@ export class HeaderComponent implements OnInit {
       navbar.classList.add('navbar-dark', 'bg-dark');
       label_mode.innerText = 'Light Mode';
       label_mode.style.color = 'white';
+      document.body.style.backgroundColor = 'black';
 
     }
     else{
@@ -31,6 +33,7 @@ export class HeaderComponent implements OnInit {
       navbar.classList.add('navbar-light', 'bg-light');
       label_mode.innerText = 'Dark Mode'
       label_mode.style.color = 'black';
+      document.body.style.backgroundColor = 'white';
 
 
     }

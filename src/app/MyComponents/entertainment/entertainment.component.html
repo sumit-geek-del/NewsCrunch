@@ -1,0 +1,25 @@
+<div container-fluid id="main_body">
+    <div class="card" *ngFor="let items of newArticles">
+      <div class="inner_div">
+        <img src="{{ items.urlToImage != null ? items.urlToImage: 'https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_960_720.jpg' }}" class="card-img-top" />
+        <div class="card-body">
+          <h5 class="card-title">{{ items.title.substring(0, 50) }}...</h5>
+          <p class="card-text">{{ items.description.substring(0, 120) }}...</p>
+  
+          <span class="published"
+            >Published By :
+            {{ items.author != null ? items.author.substring(0, 15) : "Unknown" }}
+          </span>
+          <span class="published"
+            >Published At : {{ items.publishedAt.substring(0, 10) }}
+          </span>
+  
+          <div class="last_div">
+            <a href="{{items.url}}" target="_blank" class="btn btn-primary">Read More</a>
+            <span class="badge rounded-pill bg-dark">{{items.source}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

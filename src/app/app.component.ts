@@ -12,14 +12,7 @@ export class AppComponent {
 constructor(private data:ApiService){}
   ngOnInit(){
 
-    this.data.newsData().subscribe((res)=>{
-      console.log(res);
-
-    })
-    this.data.newsByCategory('entertainment').subscribe((res)=>{
-      console.log(res);
-      
-    })
+    
 
   }
 

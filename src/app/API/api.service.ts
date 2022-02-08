@@ -6,15 +6,22 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ApiService {
 
+  API_KEY = '108345aa25cc452a8f42b1bb62cf4fe0'
+
   constructor(private data:HttpClient) { }
 
   newsData(){
-    const data = this.data.get('https://newsapi.org/v2/everything?q=politics&apiKey=0a7df79493664fd3a89672b25e6ea6b4');
+    const data = this.data.get(`https://newsapi.org/v2/everything?q=politics&apiKey=${this.API_KEY}`);
     return data;
   }
 
   newsByCategory(category:any){
-    const data = this.data.get(`https://newsapi.org/v2/top-headlines?country=de&category=${category}&apiKey=0a7df79493664fd3a89672b25e6ea6b4`);
+    const data = this.data.get(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${this.API_KEY}`);
+    return data;
+  }
+
+  newsDataIndia(){
+    const data = this.data.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${this.API_KEY}`);
     return data;
   }
 
